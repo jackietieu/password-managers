@@ -53,11 +53,15 @@ export function LeakCheckers() {
   return (
     <section ref={revealRef} className="section checkers" id="check">
       <div className="container">
-        <div className="section-head" data-reveal>
-          <p className="kicker">Check yourself</p>
-          <h2>
-            Find out if you’re <span className="grad-text">already in a leak</span>
-          </h2>
+        <div className="section-title" data-reveal>
+          <div className="section-title-bg">
+            <p className="kicker">Check yourself</p>
+            <h2>
+              Find out if you’re <span className="grad-text">already in a leak</span>
+            </h2>
+          </div>
+        </div>
+        <div className="section-head">
           <p>
             These services index public breach data. Rule of thumb: a lookup tool should never
             need your actual password — tools like Have I Been Pwned use k-anonymity, sending

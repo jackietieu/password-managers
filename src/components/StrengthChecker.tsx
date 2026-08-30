@@ -49,12 +49,16 @@ export function StrengthChecker() {
   return (
     <section ref={revealRef} className="section checker" id="anatomy">
       <div className="container">
-        <div className="section-head" data-reveal>
-          <p className="kicker">Anatomy</p>
-          <h2>
-            What separates a <s style={{ color: 'var(--bad)' }}>weak</s> password from a{' '}
-            <span className="grad-text">strong</span> one?
-          </h2>
+        <div className="section-title" data-reveal>
+          <div className="section-title-bg">
+            <p className="kicker">Anatomy</p>
+            <h2>
+              What separates a <s style={{ color: 'var(--bad)' }}>weak</s> password from a{' '}
+              <span className="grad-text">strong</span> one?
+            </h2>
+          </div>
+        </div>
+        <div className="section-head">
           <p>
             Strength is measured in <strong>entropy</strong> — the number of bits of guesswork an
             attacker must burn. Type below, or pick a famous example. Everything runs locally in

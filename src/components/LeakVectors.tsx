@@ -51,11 +51,15 @@ export function LeakVectors() {
         <div className="vectors-orb" data-parallax style={{ '--depth': -90 } as React.CSSProperties} />
       </div>
       <div className="container">
-        <div className="section-head" data-reveal>
-          <p className="kicker">Escape routes</p>
-          <h2>
-            Six ways your password <span className="grad-text">leaves without you</span>
-          </h2>
+        <div className="section-title" data-reveal>
+          <div className="section-title-bg">
+            <p className="kicker">Escape routes</p>
+            <h2>
+              Six ways your password <span className="grad-text">leaves without you</span>
+            </h2>
+          </div>
+        </div>
+        <div className="section-head">
           <p>
             Almost every account takeover traces back to one of these. Note how many of them
             never involve “guessing” your password at all.

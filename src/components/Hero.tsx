@@ -42,9 +42,6 @@ export function Hero() {
       ))}
 
       <div className="container hero-inner" data-parallax style={{ '--depth': 24 } as React.CSSProperties}>
-        <p className="hero-tag" data-reveal>
-          An interactive field guide to password security
-        </p>
         <h1 className="hero-title">
           Your password is either <span className="hero-weak">a skeleton key</span> for strangers
           or <span className="grad-text">a locked door</span>.

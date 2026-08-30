@@ -109,13 +109,17 @@ export function Stats() {
         <div className="stats-orb" data-parallax style={{ '--depth': -110 } as React.CSSProperties} />
       </div>
       <div className="container">
-        <div className="section-head" data-reveal>
-          <p className="kicker">The problem</p>
-          <h2>
-            Weak passwords aren’t a personal failing.
-            <br />
-            They’re <span className="grad-text">a global supply chain</span> for crime.
-          </h2>
+        <div className="section-title" data-reveal>
+          <div className="section-title-bg">
+            <p className="kicker">The problem</p>
+            <h2>
+              Weak passwords aren’t a personal failing.
+              <br />
+              They’re <span className="grad-text">a global supply chain</span> for crime.
+            </h2>
+          </div>
+        </div>
+        <div className="section-head">
           <p>
             When a company is breached, its password database lands on a marketplace within
             days. From there, it gets replayed against every other site you use.

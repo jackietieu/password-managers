@@ -46,13 +46,17 @@ export function Managers() {
   return (
     <section ref={revealRef} className="section managers" id="managers">
       <div className="container">
-        <div className="section-head" data-reveal>
-          <p className="kicker">The fix</p>
-          <h2>
-            You can’t memorize 100 passwords.
-            <br />
-            <span className="grad-text">You only need one.</span>
-          </h2>
+        <div className="section-title" data-reveal>
+          <div className="section-title-bg">
+            <p className="kicker">The fix</p>
+            <h2>
+              You can’t memorize 100 passwords.
+              <br />
+              <span className="grad-text">You only need one.</span>
+            </h2>
+          </div>
+        </div>
+        <div className="section-head">
           <p>
             A password manager generates a unique, random credential for every site, stores them
             in an encrypted vault, and fills them for you. You memorize a single long passphrase —
