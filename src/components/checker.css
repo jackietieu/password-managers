@@ -1,0 +1,257 @@
+.checker-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.checker-panel {
+  padding: clamp(22px, 3vw, 36px);
+}
+
+.checker-input-row {
+  position: relative;
+}
+
+.checker-input {
+  width: 100%;
+  padding: 18px 56px 18px 20px;
+  background: rgb(0 0 0 / 0.3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.01em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checker-input::placeholder {
+  color: var(--faint);
+}
+
+.checker-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgb(124 108 255 / 0.22);
+}
+
+.checker-eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.checker-eye:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+/* Strength meter */
+.meter {
+  display: flex;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.meter-seg {
+  height: 7px;
+  flex: 1;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  transition: background 0.4s ease;
+}
+
+/* Readout */
+.checker-readout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.checker-verdict {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.checker-blurb {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 34ch;
+}
+
+.checker-stats {
+  display: flex;
+  gap: 22px;
+  margin: 0;
+}
+
+.checker-stats div {
+  min-width: 64px;
+}
+
+.checker-stats dt {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+}
+
+.checker-stats dd {
+  margin: 4px 0 0;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Crack time banner */
+.checker-crack {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgb(53 208 255 / 0.25);
+  background: rgb(53 208 255 / 0.07);
+  font-size: 0.93rem;
+  color: var(--muted);
+}
+
+.checker-crack svg {
+  color: var(--accent-2);
+  flex-shrink: 0;
+}
+
+.checker-crack strong {
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+.checker-crack.is-empty {
+  opacity: 0.55;
+}
+
+/* Issues */
+.checker-issues {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.checker-issues li {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 0.9rem;
+  color: var(--warn);
+}
+
+.issue-icon {
+  flex-shrink: 0;
+  translate: 0 2px;
+}
+
+/* Presets */
+.checker-presets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 26px;
+  font-size: 0.82rem;
+  color: var(--faint);
+}
+
+.checker-presets button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 6px 13px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.checker-presets button:hover {
+  border-color: var(--accent);
+  background: rgb(124 108 255 / 0.12);
+}
+
+.checker-presets code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* Recipe aside */
+.checker-recipe {
+  padding: clamp(22px, 3vw, 30px);
+  background: linear-gradient(160deg, rgb(124 108 255 / 0.1), rgb(53 208 255 / 0.05));
+  border-radius: var(--radius);
+  border: 1px solid rgb(124 108 255 / 0.3);
+}
+
+.checker-recipe h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+}
+
+.recipe-icon {
+  color: var(--good);
+  flex-shrink: 0;
+}
+
+.checker-recipe ol {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.checker-recipe li::marker {
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.checker-recipe strong {
+  color: var(--text);
+}
+
+.checker-recipe code {
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  background: rgb(0 0 0 / 0.3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+
+@media (max-width: 920px) {
+  .checker-grid {
+    grid-template-columns: 1fr;
+  }
+}

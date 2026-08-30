@@ -1,0 +1,83 @@
+.stats {
+  overflow: clip;
+}
+
+.stats-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.stats-orb {
+  position: absolute;
+  top: 20%;
+  right: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgb(255 122 198 / 0.08);
+  filter: blur(100px);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 30px 26px 26px;
+  position: relative;
+  transition: border-color 0.25s ease, translate 0.25s ease;
+}
+
+.stat-card:hover {
+  border-color: rgb(124 108 255 / 0.5);
+  translate: 0 -4px;
+}
+
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-suffix {
+  font-size: 0.6em;
+}
+
+.stat-label {
+  margin-top: 14px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.stat-source {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--faint);
+  letter-spacing: 0.02em;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--grad);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.stat-card:hover::after {
+  opacity: 1;
+}

@@ -1,0 +1,136 @@
+.managers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 20px;
+}
+
+.manager-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, translate 0.25s ease;
+}
+
+.manager-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--tone, var(--accent));
+  opacity: 0.85;
+}
+
+.tone-accent {
+  --tone: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+.tone-blue {
+  --tone: linear-gradient(90deg, #35a7ff, var(--accent-2));
+}
+.tone-violet {
+  --tone: linear-gradient(90deg, #9d5cff, var(--accent));
+}
+.tone-green {
+  --tone: linear-gradient(90deg, var(--good), #35d0a0);
+}
+
+.manager-card:hover {
+  border-color: var(--border-strong);
+  translate: 0 -4px;
+}
+
+.manager-card h3 {
+  font-size: 1.28rem;
+  letter-spacing: -0.015em;
+}
+
+.manager-tagline {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.manager-card ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+
+.manager-card li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.manager-check {
+  flex-shrink: 0;
+  color: var(--good);
+  translate: 0 2px;
+}
+
+.manager-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-2);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.manager-link:hover {
+  color: var(--text);
+}
+
+/* Checklist */
+.manager-checklist {
+  margin-top: 28px;
+  padding: 26px 30px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(200px, auto) 1fr;
+  align-items: center;
+  border-color: rgb(124 108 255 / 0.35);
+}
+
+.manager-checklist h3 {
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.manager-checklist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+
+.manager-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.checklist-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .manager-checklist {
+    grid-template-columns: 1fr;
+  }
+}

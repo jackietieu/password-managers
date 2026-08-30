@@ -1,0 +1,140 @@
+.vectors {
+  overflow: clip;
+}
+
+.vectors-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vectors-orb {
+  position: absolute;
+  top: 10%;
+  left: -180px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: rgb(124 108 255 / 0.1);
+  filter: blur(110px);
+}
+
+.vector-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  gap: 28px;
+}
+
+/* Vertical rail */
+.vector-timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 25px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-2), var(--accent) 50%, #ff7ac6);
+  opacity: 0.4;
+  border-radius: 999px;
+}
+
+.vector-item {
+  position: relative;
+  padding-left: 68px;
+}
+
+.vector-marker {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg-raise);
+  border: 1px solid var(--border-strong);
+  color: var(--accent-2);
+  z-index: 1;
+}
+
+.vector-card {
+  padding: 22px 24px;
+  transition: border-color 0.25s ease, translate 0.25s ease;
+}
+
+.vector-card:hover {
+  border-color: rgb(53 208 255 / 0.45);
+  translate: 0 -3px;
+}
+
+.vector-card h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+}
+
+.vector-index {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.vector-card p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.vector-stat {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-2);
+}
+
+/* Alternating layout on wide screens */
+@media (min-width: 900px) {
+  .vector-timeline {
+    gap: 36px;
+  }
+
+  .vector-timeline::before {
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  .vector-item {
+    width: 50%;
+    padding-left: 0;
+  }
+
+  .vector-item:nth-child(odd) {
+    justify-self: start;
+    padding-right: 56px;
+  }
+
+  .vector-item:nth-child(odd) .vector-marker {
+    left: auto;
+    right: -20px;
+    translate: -50% 0;
+  }
+
+  .vector-item:nth-child(even) {
+    justify-self: end;
+    padding-left: 56px;
+  }
+
+  .vector-item:nth-child(even) .vector-marker {
+    left: -20px;
+    translate: 50% 0;
+  }
+}

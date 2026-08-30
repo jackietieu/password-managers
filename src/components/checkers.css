@@ -1,0 +1,114 @@
+.checkers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.tool-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px 24px;
+  transition: border-color 0.25s ease, translate 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tool-card:hover {
+  border-color: rgb(124 108 255 / 0.5);
+  translate: 0 -4px;
+  box-shadow: var(--shadow);
+}
+
+.tool-highlight {
+  border-color: rgb(53 208 255 / 0.4);
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgb(53 208 255 / 0.1), transparent 60%),
+    var(--surface);
+}
+
+.tool-badge {
+  position: absolute;
+  top: -11px;
+  right: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--grad);
+  color: #0a0e1a;
+  font-weight: 700;
+}
+
+.tool-card h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.tool-tagline {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.tool-card ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+
+.tool-card li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.tool-check {
+  flex-shrink: 0;
+  color: var(--good);
+  translate: 0 2px;
+}
+
+.tool-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--accent-2);
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.tool-link:hover {
+  gap: 12px;
+  color: var(--text);
+}
+
+.checkers-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 34px;
+  padding: 15px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgb(255 187 84 / 0.3);
+  background: rgb(255 187 84 / 0.07);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.checkers-note svg {
+  color: var(--warn);
+  flex-shrink: 0;
+}
