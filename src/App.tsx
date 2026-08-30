@@ -1,3 +1,4 @@
+import { useStickyStack } from './hooks/useScrollFx'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Stats } from './components/Stats'
@@ -8,6 +9,7 @@ import { Managers } from './components/Managers'
 import { Footer } from './components/Footer'
 
 export default function App() {
+  useStickyStack()
   return (
     <>
       <Nav />

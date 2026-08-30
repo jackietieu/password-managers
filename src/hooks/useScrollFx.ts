@@ -88,3 +88,32 @@ export function useParallax<T extends HTMLElement>() {
 
   return ref
 }
+
+/**
+ * Full-page stacked sections: pins each <section> under <main> so the next
+ * one slides over it. Short sections pin at the top (top: 0); sections taller
+ * than the viewport pin with their bottom edge at the viewport bottom, so all
+ * content stays reachable while scrolling through.
+ */
+export function useStickyStack() {
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('main > section'))
+    if (!sections.length) return
+
+    const apply = () => {
+      const vh = window.innerHeight
+      for (const section of sections) {
+        section.style.top = `${Math.min(0, vh - section.offsetHeight)}px`
+      }
+    }
+
+    apply()
+    const ro = new ResizeObserver(apply)
+    sections.forEach((s) => ro.observe(s))
+    window.addEventListener('resize', apply)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', apply)
+    }
+  }, [])
+}

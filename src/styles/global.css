@@ -46,7 +46,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: 0;
 }
 
 body {
@@ -59,6 +59,7 @@ body {
   font-family: var(--font-display);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
   overflow-x: clip;
 }
 
@@ -109,14 +110,25 @@ a {
   margin-inline: auto;
 }
 
+/* Full-page stacked sections: each section pins and the next slides over it.
+   Short sections pin flush at the top; taller ones pin with their bottom edge
+   at the viewport bottom (top set by useStickyStack), so no content is
+   unreachable. Opaque bg + top shadow sell the slide-over depth. */
 .section {
-  position: relative;
-  padding-block: clamp(72px, 10vw, 128px);
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+  padding-block: clamp(72px, 10vw, 110px);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -28px 56px rgb(0 0 0 / 0.38);
 }
 
 .section-head {
   max-width: 640px;
-  margin-bottom: clamp(40px, 6vw, 72px);
+  margin-bottom: clamp(40px, 6vw, 64px);
 }
 
 .kicker {

@@ -5,13 +5,9 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-col footer-brand">
-          <p className="footer-logo">
-            weak<strong>&amp;</strong>strong
-          </p>
+          <p className="footer-logo">Password Security</p>
           <p className="footer-disclaimer">
-            An educational, frontend-only showcase. Password analysis runs entirely in your
-            browser — nothing you type here is stored or transmitted. Statistics are industry
-            estimates; verify details with the linked primary sources.
+            An educational site about the dangers of bad password habits and what you can do about them. Password analysis runs entirely in your browser — nothing you type here is stored or transmitted. Statistics are industry estimates; verify details with the linked primary sources.
           </p>
         </div>
 
@@ -53,7 +49,7 @@ export function Footer() {
       </div>
 
       <div className="container footer-meta">
-        <span>Built with React, Vite, and hand-written CSS — scroll-driven animations, parallax, container-friendly grids.</span>
+        <span>Built with React, Vite, basic CSS, and a passion for improving bad password habits.</span>
       </div>
     </footer>
   )

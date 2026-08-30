@@ -50,8 +50,7 @@ export function Hero() {
           or <span className="grad-text">a locked door</span>.
         </h1>
         <p className="hero-sub" data-reveal>
-          Billions of leaked credentials are circulating right now. Scroll to see what weak
-          passwords cost the world, how they escape, and the two-minute fix.
+          Billions of leaked credentials are circulating right now.
         </p>
         <div className="hero-actions" data-reveal>
           <a href="#anatomy" className="btn btn-primary">

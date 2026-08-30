@@ -25,7 +25,7 @@ export function Nav() {
       <div className="container nav-inner">
         <a href="#top" className="nav-logo" aria-label="Back to top">
           <Icon name="key" size={18} />
-          <span>weak<strong>&amp;</strong>strong</span>
+          <span>Password Security</span>
         </a>
         <nav className="nav-links" aria-label="Sections">
           {LINKS.map((l) => (
