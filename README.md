@@ -1,32 +1,56 @@
-# React + TypeScript + Vite
+# Password Security — An Interactive Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Live site: <https://jackietieu.github.io/password-managers/>**
 
-Currently, two official plugins are available:
+An interactive, frontend-only guide to password security: what weak passwords cost the world,
+how credentials leak and get abused, tools for checking your own exposure, and password
+managers as the fix.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Highlights
 
-## React Compiler
+- **Live strength analyzer** — entropy model with heuristic detection of dictionary words,
+  keyboard walks, years, and repetition; offline crack-time estimates. Runs entirely in the
+  browser; nothing is sent anywhere.
+- **Breach statistics** with source attributions and count-up animation.
+- **Leak-vector timeline** — breaches, credential stuffing, phishing, malware, brute force,
+  personal guesswork.
+- **Exposure checkers** — Have I Been Pwned (with a k-anonymity explainer), Firefox Monitor,
+  Google Password Checkup, DeHashed.
+- **Password managers** — Bitwarden, 1Password, Proton Pass, KeePassXC, plus a
+  what-to-look-for checklist.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Frontend techniques on display
 
-## Expanding the Oxlint configuration
+- Full-page stacked sections: each section pins and the next slides over it
+  (`position: sticky` + per-section pin offsets from `useStickyStack`)
+- Sticky section titles that only gain their floating-chip treatment when actually stuck
+  (CSS `scroll-state()` container queries, with a fallback for unsupported browsers)
+- CSS scroll-driven animations for reveals, parallax, and the nav scroll-progress bar
+  (`view()` / `scroll()` timelines), each with a JS fallback (`IntersectionObserver`, rAF)
+- Parallax layers at multiple depths, animated counters, fluid `clamp()` typography,
+  `prefers-reduced-motion` respected throughout
+- Hand-written CSS only — no UI framework
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+React 19 · TypeScript · Vite · self-hosted variable fonts (Fontsource) · no CSS framework
+
+## Development
+
+```sh
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Deployment
+
+Pushes to `main` build and deploy automatically via
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) to GitHub Pages. The Pages
+build sets `GITHUB_PAGES=true` so Vite emits the `/password-managers/` base path
+(see `vite.config.ts`).
+
+## Analytics
+
+Self-hosted [Umami](https://umami.is) (privacy-friendly, cookie-free). The tracking script
+lives in `index.html`; the per-site website ID comes from `VITE_UMAMI_WEBSITE_ID` in `.env`.
+With no ID set, the script loads but tracks nothing.
