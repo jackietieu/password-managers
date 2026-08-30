@@ -31,6 +31,16 @@
       name="twitter:description"
       content="What weak passwords cost the world, how they leak, and the two-minute fix — an interactive guide with a live password-strength analyzer."
     />
+    <!--
+      Umami analytics (self-hosted fork, shared with ball-x-pit-ui).
+      The website ID lives in .env — each site gets its own ID from the
+      Umami dashboard. With no ID set the script loads but tracks nothing.
+    -->
+    <script
+      defer
+      src="https://umami-fork-tau.vercel.app/script.js"
+      data-website-id="%VITE_UMAMI_WEBSITE_ID%"
+    ></script>
     <title>An Interactive Guide to Password Security</title>
   </head>
   <body>
